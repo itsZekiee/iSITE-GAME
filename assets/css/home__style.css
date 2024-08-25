@@ -5,6 +5,8 @@
     --primary-color: rgba(152,93,206,255);
     --secondary-color: rgba(187,107,218,255);
     --tertiary-color: rgba(3,3,3,255);
+    --Quaternary-color: rgba(25,0,25,100%);
+    --Quinary-color: rgba(4,7,16,255);
     --main-background: #ffff;
 
     /* =============== FONTS =============== */
@@ -109,68 +111,85 @@ img {
 
 /* ============== HEADER SECTION ============== */
 .header {
-    background-color: var(--tertiary-color);
+    position: fixed;
+    width: 100%;
+    background-color: var(--Quinary-color);
     color: var(--primary-color);
-    padding: 1rem 0;
+    padding: 0.5rem 0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .header .store__name {
+.header .store__name {
     font-size: var(--h1-font-size);
     font-weight: var(--font-semi-bold);
     margin-bottom: var(--mb-0-5);
     padding-left: 2rem;
-  }
-  
-  .nav__con {
+}
+
+/* ============== NAVIGATION SECTION ============== */
+.nav__con {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
   
   .nav__list {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px auto 10px; /* Shorthand margin property */
   }
   
+  
   .nav__items {
-    margin-right: 20px; /* add space between nav items */
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav__items:hover {
+    transform: scale(1.1);
   }
   
   .nav__link {
     color: var(--primary-color);
-    transition: color 0.4s;
-    position: relative;
-    margin-bottom: 10px; /* add margin bottom */
-    text-decoration: none; /* removed */
-  }
-  
-  .nav__link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: var(--secondary-color);
-    transition: width 0.4s, left 0.4s;
-  }
-  
-  .nav__link:hover::after {
-    width: 100%;
-    left: 0;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease-in-out;
   }
   
   .nav__link:hover {
-    color: inherit; /* remove blue color on hover */
+    color: var(--secondary-color);
   }
+  
+  .nav__items.active {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+  
+  .nav__items.active .nav__link {
+    color: var(--primary-color);
+    font-weight: var(--font-semi-bold);
+  }
+
+.play__now {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+}
+  
+.play__now .nav__link {
+    color: var(--tertiary-color);
+}
 
 /* ============== HOME SECTION ============== */
 .home {
-    background-image: url(../media/background_1.jfif);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(../media/background_5.jfif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -179,3 +198,75 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+.home__container {
+    text-align: center;
+}
+
+.title__banner {
+    font-size: 4rem; 
+    font-weight: var(--font-semi-bold);
+    color: var(--primary-color);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.sub__banner {
+    font-size: 1.5rem; 
+    font-weight: var(--font-medium);
+    color: var(--primary-color);
+    margin-bottom: var(--mb-2);
+}
+
+.home button[type="button"] {
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.home button[type="button"]:hover {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+}
+
+/* ============== LEADERBOARD SECTION ============== */
+.leaderboard {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(../media/background_3.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90.5vh;
+    display: flex;
+    padding: 5.5rem 0 1rem;
+  }
+  
+  .leaderboard__container {
+    max-width: 40%; /* added this line to limit the width to half of the screen */
+    margin: 5rem; /* added this line to center the container */
+  }
+  
+  .leaderboard__title {
+    font-size: 2.5rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--primary-color);
+    margin-bottom: var(--mb-2);
+    text-align: left; /* added this line to left-align the title */
+  }
+  
+  .lb__SubPragragph {
+    font-size: 1.25rem;
+    font-weight: var(--font-medium);
+    color: var(--primary-color);
+    margin-bottom: var(--mb-1-5);
+    text-align: left; /* added this line to left-align the subtitle */
+  }
+
+  .lb__info {
+    max-width: 100%; /* set the max-width to 100% of the parent container */
+    margin: 0 auto; /* center the lb__info container */
+  }
