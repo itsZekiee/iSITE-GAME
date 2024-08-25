@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Color Pallets */ 
+    --primary-color: rgba(152,93,206,255);
+    --secondary-color: rgba(187,107,218,255);
+    --tertiary-color: rgba(3,3,3,255);
+    --main-background: #ffff;
+
+    /* =============== FONTS =============== */
+    --body-font: 'Poppins', sans-serif;
+    --big-fonts: 2.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* =============== FONTS WEIGHTS =============== */
+    --font-thin: 100;
+    --font-small: 300;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* =============== MARGIN BOTTOM =============== */
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+
+    /* =============== Z-INDEX =============== */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* =============== BASE STYLES =============== */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0; 
+    background-color: var(--main-background);
+    color: var(--primary-color);
+    transition: .4s;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =============== REUSABLE COMPONENTS =============== */
+.section {
+    padding: 5.5rem 0 1rem;
+}
+
+.section__title {
+    font-size: 2.5rem;
+    margin-bottom: var(--mb-2);
+    line-height: 140%;
+    text-align: center;
+    padding-top: 2.5rem;
+}
+
+.container {
+    max-width: 100%;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+}
+
+.main {
+    overflow: hidden;
+}
+
+/* ============== HEADER SECTION ============== */
+.header {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .store__name {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-0-5);
+    padding-left: 2rem;
+  }
+  
+  .nav__con {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav__items {
+    margin-right: 20px; /* add space between nav items */
+  }
+  
+  .nav__link {
+    color: var(--primary-color);
+    transition: color 0.4s;
+    position: relative;
+    margin-bottom: 10px; /* add margin bottom */
+    text-decoration: none; /* removed */
+  }
+  
+  .nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.4s, left 0.4s;
+  }
+  
+  .nav__link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .nav__link:hover {
+    color: inherit; /* remove blue color on hover */
+  }
+
+/* ============== HOME SECTION ============== */
+.home {
+    background-image: url(../media/background_1.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
