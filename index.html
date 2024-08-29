@@ -34,27 +34,59 @@
                     <a href="#home" class="nav__link">Home</a>
                 </li>
                 <li class="nav__items">
+                    <a href="#games" class="nav__link">Games</a>
+                </li>
+                <li class="nav__items">
                     <a href="#leaderboard" class="nav__link">Leaderboard</a>
                 </li>
                 <li class="nav__items">
                     <a href="#how_to_play" class="nav__link">How to Play?</a>
                 </li>
                 <li class="nav__items play__now">
-                    <a href="#play_now" class="nav__link active">Play Now!</a>
+                    <a href="#games" class="nav__link active">Play Now!</a>
                 </li>
             </ul>
         </nav>
     </header>
     
     <main class="main">
+        <!--============ HOME SECTION ============-->
         <section class="home" id="home">
             <div class="home__container container">
-                <h1 class="title__banner">ByteMatch</h1>
-                <h2 class="sub__banner">"Find the Perfect Match in Our Digital Deck"</h2>
-                <button type="button">Play Now!</button>
+              <h1 class="title__banner">ByteMatch</h1>
+              <h2 class="sub__banner">Find the Perfect Match in Our Digital Deck</h2>
+              <div class="button-container">
+                <button type="button" class="playNow">Play Now!</button>
+                <button type="button" class="learnMore">Learn More</button>
+              </div>
+            </div>
+          </section>
+
+        <!--============ GAMES SECTION ============-->
+        <section class="games" id="games">
+            <div class="games__container container">
+                <h1 class="section__title">CHECK OUR NEWEST GAMES!</h1>
+            
+                <div class="game__cards">
+                    <div class="game__image">
+                        <img src="./assets/media/game_image 1.jpg" alt="Matching Cards" srcset="">
+                    </div>
+                    <div class="game__info">
+                        <h2 class="game__title">Matching Cards</h2>
+                        <p class="game__description">
+                            "ByteMatch" is a card matching game that tests your knowledge of programming languages. 
+                            The game has three difficulty levels: easy, average, and hard. Each difficulty level has 
+                            a time limit and a limited number of moves. Players must find the matching pairs of 
+                            programming language icons within the allotted time and moves. The top 5 players on the 
+                            leaderboard will receive rewards from the iSITE Community!
+                        </p>
+                        <button type="button" class="cardPlay">Play Now!</button>
+                    </div>
+                </div>
             </div>
         </section>
-
+        
+        <!--============ LEADERBOARD SECTION ============-->
         <section class="leaderboard" id="leaderboard">
             <div class="leaderboard__container container">
                 <div class="lb__info">
@@ -63,24 +95,28 @@
                 </div>
             </div>
         </section>
-
+        
+        <!--============ HOW TO PLAY? SECTION ============-->
         <section class="how_to_play" id="how_to_play">
             <div class="htp__container container">
                 
             </div>
         </section>
 
+        <!--============ SIGN IN & SIGN UP SECTION ============-->
         <section class="logInForm" id="logInForm">
             <div class="logInForm__container container">
 
             </div>
         </section>
-
-        <section class="footer" id="footer">
-            <div class="footer__container container">
-
-            </div>
-        </section>
     </main>
+    <!--============ FOOTER ============-->
+    <footer class="footer container">
+        <div class="footer__container">
+            <p class="footer__copyright">© 2023 iSITE. All Rights Reserved.</p>
+            <a href="#" class="footer__link">Terms & Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+        </div>
+    </footer>
 </body>
 </html>
