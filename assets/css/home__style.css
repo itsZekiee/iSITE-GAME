@@ -343,7 +343,7 @@ img {
 
 /* ============== LEADERBOARD SECTION ============== */
 .leaderboard {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(../media/background_3.jfif);
+  background-image: url(../media/background_8.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
