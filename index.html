@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- ============ BOOTSTRAP ============ -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- ============ OWL CAROUSEL ============ -->
-        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+
+    <link rel="shortcut icon" href="assets/media/logo.ico" type="image/x-icon">
+
+    <!-- ============ BOOTSTRAP ============ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-        <!-- ============   FONT AWESOME ============ -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        
-        <!-- ============   REMIXICON ============ -->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- ============ OWL CAROUSEL ============ -->
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
     
-        <!-- ============ STYLESHEET ============ -->
-        <link rel="stylesheet" href="assets/css/home__style.css">
+    <!-- ============   FONT AWESOME ============ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        
+    <!-- ============   REMIXICON ============ -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    
+    <!-- ============ STYLESHEET ============ -->
+    <link rel="stylesheet" href="assets/css/home__style.css">
 
     <title>iSITE Byte Game</title>
 </head>
@@ -103,12 +106,57 @@
             </div>
         </section>
 
-        <!--============ SIGN IN & SIGN UP SECTION ============-->
-        <section class="logInForm" id="logInForm">
-            <div class="logInForm__container container">
-
+        <!-- ============ LOG IN SECTION ============ -->
+        <section class="register__form" id="register__form">
+            <div class="register__container" id="register__container">
+                <div class="form-container sign-up">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-google"></i></i></a>
+                        </div>
+                        <span>or use your email for registeration</span>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <button>Sign Up</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in">
+                    <form>
+                        <h1>Sign In</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-google"></i></i></a>
+                        </div>
+                        <span>or use your email password</span>
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <a href="#">Forget Your Password?</a>
+                        <button>Sign In</button>
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of site features</p>
+                            <button class="hidden" id="login">Sign In</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of site features</p>
+                            <button class="hidden" id="register">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
     </main>
     <!--============ FOOTER ============-->
     <footer class="footer container">
@@ -118,5 +166,8 @@
             <a href="#" class="footer__link">Privacy Policy</a>
         </div>
     </footer>
+
+    <!-- ============ MAIN SCRIPT ============ -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
