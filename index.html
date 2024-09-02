@@ -1,173 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="assets/media/logo.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/img/logo.ico" type="ico">
 
-    <!-- ============ BOOTSTRAP ============ -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- ============ OWL CAROUSEL ============ -->
-    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
-    
-    <!-- ============   FONT AWESOME ============ -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
         
-    <!-- ============   REMIXICON ============ -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
-    
-    <!-- ============ STYLESHEET ============ -->
-    <link rel="stylesheet" href="assets/css/home__style.css">
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-    <title>iSITE Byte Game</title>
-</head>
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-<body>
-    <!-- ============ HEADER SECTION ============ -->
-    <header class="header" id="header">
-        <div class="title__logo">
-            <h1 class="store__name">iSITE Byte Game</h1>
-        </div>
+        <title>iSITE BYTE MATCH</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">iSITE: MEMORY MAZE</a>
 
-        <nav class="nav__con">
-            <ul class="nav__list">
-                <li class="nav__items">
-                    <a href="#home" class="nav__link">Home</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#games" class="nav__link">Games</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#leaderboard" class="nav__link">Leaderboard</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#how_to_play" class="nav__link">How to Play?</a>
-                </li>
-                <li class="nav__items play__now">
-                    <a href="#games" class="nav__link active">Play Now!</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="main">
-        <!--============ HOME SECTION ============-->
-        <section class="home" id="home">
-            <div class="home__container container">
-              <h1 class="title__banner">ByteMatch</h1>
-              <h2 class="sub__banner">Find the Perfect Match in Our Digital Deck</h2>
-              <div class="button-container">
-                <button type="button" class="playNow">Play Now!</button>
-                <button type="button" class="learnMore">Learn More</button>
-              </div>
-            </div>
-          </section>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#games" class="nav__link">Games</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#how__to__play" class="nav__link">How to Play?</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#leaderboard" class="nav__link">Leaderboard</a>
+                        </li>
+                    </ul>
 
-        <!--============ GAMES SECTION ============-->
-        <section class="games" id="games">
-            <div class="games__container container">
-                <h1 class="section__title">CHECK OUR NEWEST GAMES!</h1>
-            
-                <div class="game__cards">
-                    <div class="game__image">
-                        <img src="./assets/media/game_image 1.jpg" alt="Matching Cards" srcset="">
+                    <div class="nav__dark">
+                        <!-- Theme change button -->
+                        <span class="change-theme-name">Dark mode</span>
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
                     </div>
-                    <div class="game__info">
-                        <h2 class="game__title">Matching Cards</h2>
-                        <p class="game__description">
-                            "ByteMatch" is a card matching game that tests your knowledge of programming languages. 
-                            The game has three difficulty levels: easy, average, and hard. Each difficulty level has 
-                            a time limit and a limited number of moves. Players must find the matching pairs of 
-                            programming language icons within the allotted time and moves. The top 5 players on the 
-                            leaderboard will receive rewards from the iSITE Community!
+
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <img src="assets/img/background_7.jpg" alt="" class="home__img">
+
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <span class="home__data-subtitle">Challenge awaits you!</span>
+                        <h1 class="home__data-title">Navigate the Memory Maze: <br> The <b>Game that <br>challenge your memory</b></h1>
+                        <a href="#" class="button">Play Now!</a>
+
+                    </div>
+
+                    <div class="home__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">Meet the<br> Game changers</h2>
+                        <p class="about__description">
+                            Get to know the three web programmers behind Memory Maze, a platform that combines their passion for gaming 
+                            and expertise in web development to bring a unique memory game that's taking the gaming world by storm." ...and 
+                            so on, up to 20 examples. Let me know if you'd like me to make any adjustments or if you have any specific 
+                            preferences!
                         </p>
-                        <button type="button" class="cardPlay">Play Now!</button>
+                        <a href="#" class="button">Know More!</a>
+                    </div>
+
+                    <div class="about__img">
+                        <div class="about__img-overlay">
+                            <img src="assets/img/about-1.jpg" alt="" class="about__img-one">
+                        </div>
+
+                        <div class="about__img-overlay">
+                            <img src="assets/img/about-2.jpg" alt="" class="about__img-two">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!--============ LEADERBOARD SECTION ============-->
-        <section class="leaderboard" id="leaderboard">
-            <div class="leaderboard__container container">
-                <div class="lb__info">
-                    <h3 class="leaderboard__title section__title">Ranking Frenzy</h3>
-                <p class="lb__SubPragragph">Get ready to face off against the competition's finest! Check out the top players and see how you stack up against the competition. Compare your skills to the best of the best and climb the ranks to become the ultimate champion!</p>
-                </div>
-            </div>
-        </section>
-        
-        <!--============ HOW TO PLAY? SECTION ============-->
-        <section class="how_to_play" id="how_to_play">
-            <div class="htp__container container">
+            </section>
+            
+            <!--==================== GAME SECTION ====================-->
+            <section class="games section" id="games">
+                <h2 class="section__title">Explore iSITE's games, <br> including Memory Maze</h2>
                 
-            </div>
-        </section>
+                <div class="game__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--==================== GAME 1 ====================-->
+                        <div class="game__card swiper-slide">
+                            <a href="#">
+                                <img src="assets/img/game-1.jpg" alt="" class="game__img">
+                                <div class="game__data">
+                                    <h2 class="game__title">Memory Maze</h2>
+                                    <span class="game__description">MEMORY GAME</span>
+                                </div>
+                            </a>
+                        </div>
 
-        <!-- ============ LOG IN SECTION ============ -->
-        <section class="register__form" id="register__form">
-            <div class="register__container" id="register__container">
-                <div class="form-container sign-up">
-                    <form>
-                        <h1>Create Account</h1>
-                        <div class="social-icons">
-                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></i></a>
-                            <a href="#" class="icon"><i class="fa-brands fa-google"></i></i></a>
+                        <!--==================== GAME 2 ====================-->
+                        <div class="game__card swiper-slide">
+                            <a href="#">
+                                <img src="assets/img/game-2.jpg" alt="" class="game__img">
+                                <div class="game__data">
+                                    <h2 class="game__title">OXOasis</h2>
+                                    <span class="game__description">MEMORY GAME</span>
+                                </div>
+                            </a>
                         </div>
-                        <span>or use your email for registeration</span>
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <input type="password" placeholder="Confirm Password">
-                        <button>Sign Up</button>
-                    </form>
-                </div>
-                <div class="form-container sign-in">
-                    <form>
-                        <h1>Sign In</h1>
-                        <div class="social-icons">
-                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></i></a>
-                            <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></i></a>
-                            <a href="#" class="icon"><i class="fa-brands fa-google"></i></i></a>
-                        </div>
-                        <span>or use your email password</span>
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Password">
-                        <a href="#">Forget Your Password?</a>
-                        <button>Sign In</button>
-                    </form>
-                </div>
-                <div class="toggle-container">
-                    <div class="toggle">
-                        <div class="toggle-panel toggle-left">
-                            <h1>Welcome Back!</h1>
-                            <p>Enter your personal details to use all of site features</p>
-                            <button class="hidden" id="login">Sign In</button>
-                        </div>
-                        <div class="toggle-panel toggle-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Register with your personal details to use all of site features</p>
-                            <button class="hidden" id="register">Sign Up</button>
+
+                        <!--==================== GAME 3 ====================-->
+                        <div class="game__card swiper-slide">
+                            <a href="#">
+                                <img src="assets/img/game-3.jpg" alt="" class="game__img">
+                                <div class="game__data">
+                                    <h2 class="game__title">KHLEA</h2>
+                                    <span class="game__description">RPG GAME</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-    </main>
-    <!--============ FOOTER ============-->
-    <footer class="footer container">
-        <div class="footer__container">
-            <p class="footer__copyright">© 2023 iSITE. All Rights Reserved.</p>
-            <a href="#" class="footer__link">Terms & Conditions</a>
-            <a href="#" class="footer__link">Privacy Policy</a>
-        </div>
-    </footer>
+            </section>
 
-    <!-- ============ MAIN SCRIPT ============ -->
-    <script src="assets/js/main.js"></script>
-</body>
+            <!--==================== HOW TO PLAY? ====================-->
+            <section class="how__to__play  section" id="how__to__play">
+                <h2 class="section__title">Game On! A Quick Guide to Getting Started</h2>
+
+                <div class="video__container container">
+                    <p class="video__description">
+                        Ready to boost your memory and have fun? This guide will show you how to play the games 
+                        in just a few minutes. Learn the simple rules and objectives, and start improving your memory 
+                        skills while having a blast!
+                    </p>
+
+                    <div class="video__content">
+                        <img src=".//assets/img/background_3.jpg" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== LEADERBOARD ====================-->
+            <section class="leaderboard section" id="leaderboard">
+                <h2 class="section__title">Community Champions</h2>
+
+                <div class="leaderboard__container container grid">
+                    <div class="leaderboard__card">
+                        <h1>List of Ranking</h1>
+                        <img src=".//assets/img/background_3.jpg" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">iSITE : Memory Maze</h3>
+                        <p class="footer__description">
+                            The Game that challenge your memory Play Now!
+                        </p>
+                        <div>
+                            <a href="https://www.facebook.com/" target="_blank" class="footer__social">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="footer__social">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">About</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">About Us</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Features</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">New & Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Company</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Team</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Partnership</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Become a member</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Support</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">FAQs</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Support Center</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2024 iSITE. All rigths reserved.</p>
+                    <div class="footer__terms">
+                        <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                        <a href="#" class="footer__terms-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
