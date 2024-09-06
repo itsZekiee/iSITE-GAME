@@ -110,8 +110,8 @@ main {
 
 /* Image styling */
 .menu-container img {
-    width: 400px;
-    height: 500px;
+    width: 300px;
+    height: 400px;
     border-radius: 10px;
     transition: transform 0.3s ease;
     object-fit: cover;
