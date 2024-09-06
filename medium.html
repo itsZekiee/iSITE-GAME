@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY MATCHING</title>
+    <link rel="stylesheet" href="medium.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="medium.js" defer></script>
+</head>
+<body>
+    <div class="game">
+        <div class="board-container">
+            <div class="controls">
+                <a href="diff.html"><button>Back</button></a>
+                <button id="startBtn">Start</button>
+                <div class="stats">
+                    <div class="moves">0 moves</div>
+                    <div class="timer">Time: 0 sec</div>
+                </div>
+            </div>
+            <div class="board" data-dimension="4"></div>
+            <div class="win">
+                <div class="win-text">You won!<br /> with <span class="highlight">0</span> moves<br /> under <span class="highlight">0</span> seconds</div>
+                <div class="leaderboard-input" style="display: none;">
+                    <input type="text" id="player-name" placeholder="Enter your name" />
+                    <button id="save-leaderboard">Save to Leaderboard</button>
+                </div>
+            </div>
+        </div>
+        <div class="leaderboard-section" style="display: none;">
+            <h2>Leaderboard</h2>
+            <p>Easy Mode</p>
+            <ul id="leaderboard-list"></ul>
+        </div>
+    </div>
+</body>
+</html>

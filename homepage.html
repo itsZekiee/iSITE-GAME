@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Cards Game</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the <span class="title">iSITE: MEMORY MAZE</span></h1>
+    </header>
+
+    <main>
+        <div class="menu-container">
+            <div class="image-container">
+                <a href="cardshomepage.html"><img src="assets/img/game-1.jpg" alt=""></a>
+                <h1 class="image-title">Play Matching Cards</h1>
+                <button id="cards" onclick="cards()">CARD CHAINS</button>
+            </div>
+            <div class="image-container">
+                <a href="xoxhomepage.html"><img src="assets/img/game-2.jpg" alt=""></a>
+                <h1 class="image-title">Tic-Tac-Toe Game</h1>
+                <button id="oxo" onclick="oxo()">OXOasis</button>
+            </div>
+        </div>
+        <div class="backbtn">
+            <button onclick="viewLeaderboard()">Home</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Matching Cards Game. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function cards() {
+            window.location.href = 'cardshomepage.html';
+        }
+
+        function oxo(){
+            window.location.href= 'xoxhomepage.html';
+        }
+
+        function viewLeaderboard() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

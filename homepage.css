@@ -1,0 +1,245 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --hue-color: 190;
+  --first-color: rgba(82,48,105,255);
+  --first-color-second: rgba(25,0,25,100%);
+  --first-color-alt: rgba(25,0,25,100%);
+  --title-color: rgba(25,0,25,100%);
+  --text-color: rgba(4,7,16,255);
+  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --body-color: hsl(var(--hue-color), 100%, 99%);
+  --white-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Open Sans', sans-serif;
+  --title-font: 'Raleway', sans-serif;
+  --biggest-font-size: 2.5rem;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-25: 1.25rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
+  /*========== Hover overlay ==========*/
+  --img-transition: .3s;
+  --img-hidden: hidden;
+  --img-scale: scale(1.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background: linear-gradient(135deg, #6D83F2, #F597FF); /* Background gradient */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; 
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: var(--mb-2);
+}
+
+.title {
+    color: #5a00ff;
+}
+
+h1 {
+    font-size: var(--biggest-font-size);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: var(--title-font);
+    margin-top: 70px;
+}
+
+/* Main section styling */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--mb-2);
+    position: relative; 
+}
+
+/* Menu container styling */
+.menu-container {
+    display: flex;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Image styling */
+.menu-container img {
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.menu-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Image title styling */
+.image-title {
+    position: absolute;
+    bottom: 110px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: var(--z-tooltip);
+}
+
+.image-container:hover .image-title {
+    opacity: 1; /* Show title on hover */
+}
+
+/* Button styling */
+button {
+    font-size: var(--normal-font-size);
+    width: 160px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #5a00ff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--body-font);
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4a00d0; /* Darker shade for hover effect */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Home button styling */
+.backbtn {
+
+    text-align: center;
+}
+
+.backbtn button {
+    background-color: #5a00ff; 
+    padding: 14px 28px;
+    font-size: 1.1rem;
+}
+
+.backbtn button:hover {
+    background-color: #4a00d0; 
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: var(--mb-2);
+}
+
+footer p {
+    font-size: var(--small-font-size);
+    opacity: 0.8;
+    margin-bottom: var(--mb-1);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        gap: var(--mb-1);
+    }
+
+    .menu-container img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .backbtn {
+        bottom: 10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .menu-container {
+        gap: var(--mb-1);
+    }
+
+    .menu-container img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .backbtn {
+        bottom: 10px;
+    }
+
+}

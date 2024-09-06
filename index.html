@@ -14,6 +14,8 @@
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <title>iSITE : MEMORY MAZE</title>
     </head>
@@ -59,7 +61,7 @@
                     <div class="home__data">
                         <span class="home__data-subtitle">Challenge awaits you!</span>
                         <h1 class="home__data-title">Navigate the Memory Maze: <br> The <b>Game that <br>challenge your memory</b></h1>
-                        <a href="#games" class="button">Play Now!</a>
+                        <a href="homepage.html" class="button">Play Now!</a>
 
                     </div>
 
@@ -105,13 +107,13 @@
             
             <!--==================== GAME SECTION ====================-->
             <section class="games section" id="games">
-                <h2 class="section__title">Explore iSITE's games, <br> including Card Chains</h2>
+                <h2 class="section__title">Explore iSITE's games, <br> including Memory Maze</h2>
                 
                 <div class="game__container container swiper-container">
                     <div class="swiper-wrapper">
                         <!--==================== GAME 1 ====================-->
                         <div class="game__card swiper-slide">
-                            <a href="#">
+                            <a href="cardshomepage.html">
                                 <img src="assets/img/game-1.jpg" alt="" class="game__img">
                                 <div class="game__data">
                                     <h2 class="game__title">Card Chains</h2>
@@ -122,7 +124,7 @@
 
                         <!--==================== GAME 2 ====================-->
                         <div class="game__card swiper-slide">
-                            <a href="#">
+                            <a href="xoxhomepage.html">
                                 <img src="assets/img/game-2.jpg" alt="" class="game__img">
                                 <div class="game__data">
                                     <h2 class="game__title">OXOasis</h2>
@@ -136,8 +138,8 @@
                             <a href="#">
                                 <img src="assets/img/game-3.jpg" alt="" class="game__img">
                                 <div class="game__data">
-                                    <h2 class="game__title">PixPerfect</h2>
-                                    <span class="game__description">PUZZLE GAME</span>
+                                    <h2 class="game__title">KHLEA</h2>
+                                    <span class="game__description">RPG GAME</span>
                                 </div>
                             </a>
                         </div>
@@ -169,7 +171,24 @@
                 <div class="leaderboard__container container grid">
                     <div class="leaderboard__card">
                         <h1>List of Ranking</h1>
-                        <img src=".//assets/img/background_3.jpg" alt="" srcset="">
+                        <h2>Easy Mode</h2>
+                        <ul id="leaderboard-list" class="leaderboard-list">
+                            <!-- Leaderboard entries will be inserted here -->
+                        </ul>
+                    </div>
+                    <div class="leaderboard__card">
+                        <h1>List of Ranking</h1>
+                        <h2>Medium Mode</h2>
+                        <ul id="leaderboard-list2" class="leaderboard-list">
+                            <!-- Leaderboard entries will be inserted here -->
+                        </ul>
+                    </div>
+                    <div class="leaderboard__card">
+                        <h1>List of Ranking</h1>
+                        <h2>Hard Mode</h2>
+                        <ul id="leaderboard-list3" class="leaderboard-list">
+                            <!-- Leaderboard entries will be inserted here -->
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -266,5 +285,106 @@
 
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
+        <script>
+            
+    document.addEventListener('DOMContentLoaded', () => {
+        const leaderboardList = document.querySelector('#leaderboard-list');
+
+
+        // Function to display leaderboard
+        const displayLeaderboard = () => {
+            const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+            // Sort leaderboard by time and moves
+            const sortedLeaderboard = leaderboard.sort((a, b) => a.time - b.time || a.moves - b.moves);
+
+            leaderboardList.innerHTML = sortedLeaderboard.map((entry, index) => {
+                // Highlight top 1, 2, 3 players with different styles
+                let highlightClass = '';
+                let medalIcon = '';
+                if (index === 0) {
+                    highlightClass = 'first-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 1) {
+                    highlightClass = 'second-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 2) {
+                    highlightClass = 'third-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                }
+
+                return `<li class="${highlightClass}">${entry.name} : ${entry.moves} moves, ${entry.time} seconds ${medalIcon}</li>`;
+            }).join('');
+        };
+
+        displayLeaderboard(); // Call function to display leaderboard
+    });
+
+     document.addEventListener('DOMContentLoaded', () => {
+        const leaderboardList2 = document.querySelector('#leaderboard-list2');
+
+        // Function to display leaderboard
+        const displayLeaderboard2 = () => {
+            const leaderboard = JSON.parse(localStorage.getItem('mediumLeaderboard')) || [];
+
+            // Sort leaderboard by time and moves
+            const sortedLeaderboard = leaderboard.sort((a, b) => a.time - b.time || a.moves - b.moves);
+
+            leaderboardList2.innerHTML = sortedLeaderboard.map((entry, index) => {
+                // Highlight top 1, 2, 3 players with different styles
+                let highlightClass = '';
+                let medalIcon = '';
+                if (index === 0) {
+                    highlightClass = 'first-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 1) {
+                    highlightClass = 'second-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 2) {
+                    highlightClass = 'third-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                }
+
+                return `<li class="${highlightClass}">${entry.name} : ${entry.moves} moves, ${entry.time} seconds ${medalIcon}</li>`;
+            }).join('');
+        };
+
+        displayLeaderboard2(); // Call function to display leaderboard
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const leaderboardList3 = document.querySelector('#leaderboard-list3');
+
+        // Function to display leaderboard
+        const displayLeaderboard3 = () => {
+            const leaderboard = JSON.parse(localStorage.getItem('hardLeaderboard')) || [];
+
+            // Sort leaderboard by time and moves
+            const sortedLeaderboard = leaderboard.sort((a, b) => a.time - b.time || a.moves - b.moves);
+
+            leaderboardList3.innerHTML = sortedLeaderboard.map((entry, index) => {
+                // Highlight top 1, 2, 3 players with different styles
+                let highlightClass = '';
+                let medalIcon = '';
+                if (index === 0) {
+                    highlightClass = 'first-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 1) {
+                    highlightClass = 'second-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                } else if (index === 2) {
+                    highlightClass = 'third-place';
+                    medalIcon = '<i class="fas fa-medal medal"></i>';
+                }
+
+                return `<li class="${highlightClass}">${entry.name} : ${entry.moves} moves, ${entry.time} seconds ${medalIcon}</li>`;
+            }).join('');
+        };
+
+        displayLeaderboard3(); // Call function to display leaderboard
+    });
+
+
+        </script>
     </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="xox.css">
+</head>
+<body>
+    <div class="container">
+        <!-- New Game Information Section -->
+        <div class="game-info">
+            <h2>About the Game</h2>
+            <p>
+                Tic-Tac-Toe is a classic two-player game where players take turns marking a 3x3 grid with their symbols (X or O).
+                The first player to align three of their symbols in a row, column, or diagonal wins the game. 
+                This version includes a timer for each player and keeps track of wins across multiple matches.
+            </p>
+            <p>
+                The game is played in a "best of three" format. Once a player reaches three wins, they are declared the winner.
+                Enjoy and may the best player win!
+            </p>
+        </div>
+        <div class="smaller-screeninfo">
+            <h2>About the Game</h2>
+            <p>
+                The game is played in a "best of three" format. Once a player reaches three wins, they are declared the winner.
+                Enjoy and may the best player win!
+            </p>
+        </div>
+        <div class="card">
+            <h1>OXOasis</h1>
+            <p id="result"></p>
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+                <div class="cell" data-cell></div>
+            </div>
+            <div class="game-status" id="status"></div>
+            <div class="buttons">
+                <button id="backBtn">Back</button>
+                <button id="startButton">Start</button>
+                <button id="restartButton" class="restart-button" style="display: none;">Restart</button>
+            </div>
+        </div>
+         
+    </div>
+    
+        <!-- Modal Structure -->
+    <div id="winnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="winnerMessage">Winner Announcement</h2>
+            <button id="newMatchButton">Start New Match</button>
+        </div>
+    </div>
+
+   
+
+    <script src="xox.js"></script>
+</body>
+</html>

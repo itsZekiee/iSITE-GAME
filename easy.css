@@ -1,0 +1,399 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(325deg,  #03001e 0%,#7303c0 30%,#ec38bc 70%, #fdeff9 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.game {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 5%; 
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 1000px; 
+}
+
+.board-container {
+    flex: 1;
+    position: relative;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #282A3A;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.disabled {
+    color: #757575;
+}
+
+.stats {
+    color: #FFF;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.board,
+.win {
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: linear-gradient(135deg,  #03001e 0%,#7303c0 0%,#ec38bc 50%, #fdeff9 100%);
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.board {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+    width: 500px;
+}
+
+.board-container.flipped .board {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.board-container.flipped .win {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: #282A3A;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg) rotateZ(50deg);
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    background: none;
+    padding: 0;
+}
+
+.card.flipped .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+}
+
+.win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #FDF8E6;
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.win-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21pt;
+    color: #282A3A;
+}
+
+.highlight {
+    color: #7303c0;
+}
+
+/* Styling for leaderboard input section */
+.leaderboard-input {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px ;
+}
+
+.leaderboard-input input {
+    width: calc(100% - 22px); 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.leaderboard-input button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-input button:hover {
+    background-color: #45a049;
+}
+
+/* Enhanced Styling for leaderboard records */
+.leaderboard-section {
+    width: 400px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ec38bc 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.leaderboard-section h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #333;
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.leaderboard-section p {
+    font-size: 18px;
+}
+
+#leaderboard-list {
+    margin: 0;
+    padding: 0;
+    max-height: 450px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+}
+
+#leaderboard-list li {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+#leaderboard-list li:hover {
+    transform: translateY(-4px);
+    background: #fff;
+}
+
+.leaderboard-position {
+    font-size: 22px;
+    font-weight: var(--font-semi-bold);
+    color: var(--primary-color);
+}
+
+.leaderboard-name {
+    font-size: 18px;
+    font-weight: var(--font-medium);
+    color: #333;
+}
+
+.leaderboard-score {
+    font-size: 16px;
+    font-weight: var(--font-medium);
+    color: #666;
+}
+
+
+.first-place {
+    background-color: gold !important;
+    font-weight: bold;
+    color: black !important;
+}
+
+.second-place {
+    background-color: silver !important;
+    font-weight: bold;
+    color: black !important;
+}
+
+.third-place {
+    background-color: #cd7f32 !important; 
+    font-weight: bold;
+    color: black !important;
+}
+
+
+#play-again {
+    margin-top: 20px;
+}
+
+
+/* Medal icon styles */
+.leaderboard-list .medal {
+    margin-right: 10px;
+}
+
+.leaderboard-list .first-place .medal {
+    color: gold;
+}
+
+.leaderboard-list .second-place .medal {
+    color: silver;
+}
+
+.leaderboard-list .third-place .medal {
+    color: bronze;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .board {
+        width: 400px;
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 992px) {
+    .game {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, auto);
+        width: 350px;
+    }
+
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .leaderboard-section {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .board {
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 15px;
+        width: 80%;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+
+    .leaderboard-section {
+        width: 300px;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14pt;
+        padding: 8px 15px;
+    }
+
+    .stats {
+        font-size: 12pt;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .game {
+        margin: auto;
+    }
+    .board {
+        grid-template-columns: repeat(2, auto);
+        width: 300px;
+        grid-gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .controls {
+        margin-top: 30px;
+    }
+
+    .leaderboard-section {
+        width: 95%;
+        padding: 16px;
+        margin-bottom: 300px;
+    }
+
+    .leaderboard-section h2 {
+        font-size: 16px;
+    }
+
+    #leaderboard-list {
+        font-size: 14px;
+        max-height: 300px;
+    }
+    .stats {
+        font-size: 10pt;
+    }
+
+    button {
+        font-size: 12pt;
+        padding: 6px 12px;
+    }
+}
+
