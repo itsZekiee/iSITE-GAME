@@ -125,7 +125,7 @@ main {
 /* Image title styling */
 .image-title {
     position: absolute;
-    bottom: 90px; 
+    bottom: 120px; 
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
