@@ -22,7 +22,7 @@ const newMatchButton = document.getElementById('newMatchButton');
 const closeModal = document.querySelector('.close');
 const startButton = document.getElementById('startButton');
 let oTurn, xTimer, oTimer, gameInterval;
-const turnTimeLimit = 20; // 20 seconds per player for the entire game
+const turnTimeLimit = 10; // 20 seconds per player for the entire game
 const winThreshold = 3; // Number of wins required to win the match
 let back = document.getElementById('backBtn');
 
