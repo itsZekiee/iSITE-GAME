@@ -315,6 +315,8 @@
 
                 return `<li class="${highlightClass}">${entry.name} : ${entry.moves} moves, ${entry.time} seconds ${medalIcon}</li>`;
             }).join('');
+
+            localStorage.clear();
         };
 
         displayLeaderboard(); // Call function to display leaderboard
