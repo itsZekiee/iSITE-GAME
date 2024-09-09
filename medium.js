@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             return `<li class="${highlightClass}">${entry.name} : ${entry.moves} moves, ${entry.time} seconds ${medalIcon}</li>`;
         }).join('');
+        localStorage.clear();
     
         selectors.leaderboardSection.style.display = 'block'; // Show leaderboard section
 
